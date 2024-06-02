@@ -1,0 +1,36 @@
+// create an array to hold your NFT's
+var nftArray = [];
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the array above.
+function mintNFT(name, token, address) {
+    var nft = {
+        "nftname": name,
+        "token": token,
+        "address": address
+    }
+    nftArray.push(nft);
+}
+
+// create a function that will print all of your NFTs metadata to the console
+function listNFTs() {
+    for (var i = 0; i < nftArray.length; i++) {
+        console.log("NFT " + (i + 1) + ":");
+        console.log("Name: " + nftArray[i].nftname);
+        console.log("Token: " + nftArray[i].token);
+        console.log("Address: " + nftArray[i].address);
+        console.log("-------------------");
+    }
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    console.log("Total NFTs minted: " + nftArray.length);
+}
+
+// call your functions below this line
+mintNFT("raman", 9, "sonipat");
+mintNFT("chintu", 12, "india");
+listNFTs();
+getTotalSupply();
